@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Django Word Counter</title>
+  </head>
+  <body
+    class="bg-gradient-to-r from-blue-400 to-blue-600 flex flex-col gap-8 justify-center items-center min-h-screen"
+  >
+    <h1 class="text-white font-semibold text-4xl">Word Counter 🚀</h1>
+    <form
+    method="post"
+      class="bg-white rounded-3xl shadow-2xl shadow-gray-700 p-3 w-4/5 sm:w-3/5 gap-3 max-h-2/3 h-2/3 flex justify-center items-center flex-col"
+    >
+      <h2 class="text-center text-gray-400 font-semibold text-lg">
+        You have typed
+        <span class="text-orange-400 font-bold" id="num_words">0</span>
+        characters
+      </h2>
+      <textarea
+        name="words"
+        id="words"
+        cols="30"
+        required
+        rows="10"
+        oninput="updateCharacterCount()"
+        class="border-collapse text-lg p-3 outline resize-none flex-1 outline-blue-100 outline-2 w-full rounded-xl"
+      ></textarea>
+      <h3 class="text-gray-500 text-lg">
+        There are <span class="text-blue-500 font-bold">0</span> words in the
+        text
+      </h3>
+      <button
+        type="submit"
+        class="bg-gradient-to-r from-blue-400 to-blue-600 hover:from-sky-700 hover:to-blue-900 text-white py-2 text-2xl px-8 font-semibold rounded-full"
+      >
+        Count
+      </button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
