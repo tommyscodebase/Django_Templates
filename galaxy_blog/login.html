@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Galaxy | Login</title>
+  </head>
+  <body class="p-4 bg-gray-200">
+    <!-- Login Form -->
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2
+          class="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900"
+        >
+          Login to
+          <a
+            class="text-emerald-600 underline underline-offset-4"
+            href="index.html"
+            >Galaxy</a
+          >
+        </h2>
+      </div>
+
+      <div
+        class="mt-10 bg-white p-2 shadow-xl rounded-xl sm:mx-auto sm:w-full sm:max-w-sm"
+      >
+        <form class="space-y-6 p-4" action="#" method="POST">
+          <!-- Errors -->
+
+          <div class="bg-red-100 p-5 w-full" id="alert-container">
+            <div class="flex space-x-3">
+              <div
+                class="flex w-fit h-fit cursor-pointer"
+                id="close-alert-container"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="flex-none fill-current text-red-500 h-4 w-4"
+                >
+                  <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.597 17.954l-4.591-4.55-4.555 4.596-1.405-1.405 4.547-4.592-4.593-4.552 1.405-1.405 4.588 4.543 4.545-4.589 1.416 1.403-4.546 4.587 4.592 4.548-1.403 1.416z"
+                  />
+                </svg>
+              </div>
+              <div class="leading-tight flex flex-col space-y-2">
+                <div class="text-sm font-medium text-red-700">
+                  Something went wrong
+                </div>
+                <div class="flex-1 leading-snug text-sm text-red-600">
+                  Username and password do not match
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End of Errors -->
+
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Email address</label
+            >
+            <div class="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="block w-full rounded-md border-0 py-1.5 px-3 shadow-sm ring-1 ring-inset ring-emerald-300 placeholder:text-gray-400 focus:ring-1 focus:ring-emerald-600 focus:outline-emerald-400 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Password</label
+              >
+            </div>
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-emerald-300 placeholder:text-gray-400 focus:ring-1 focus:ring-emerald-600 focus:outline-emerald-400 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-gray-500">
+          Not a member?
+          <a
+            href="signup.html"
+            class="font-semibold leading-6 text-emerald-600 hover:text-emerald-500"
+            >Signup on Galaxy</a
+          >
+        </p>
+      </div>
+    </div>
+    <!-- End of Login Form -->
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Galaxy | All About The Artemis Lunar Mission</title>
+  </head>
+  <body class="p-4 bg-gray-200">
+    <!-- Navbar -->
+    <nav class="bg-emerald-600 shadow-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <a class="text-2xl font-bold text-white" href="index.html"
+                >Galaxy</a
+              >
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <a
+                  href="login.html"
+                  class="text-gray-100 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium"
+                  aria-current="page"
+                  >Login</a
+                >
+                <a
+                  href="signup.html"
+                  class="text-gray-100 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium"
+                  >Signup</a
+                >
+                <a
+                  href="create_post.html"
+                  class="text-gray-100 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium"
+                  aria-current="page"
+                  >Create Post</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-4 flex items-center md:ml-6">
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div>
+                  <button
+                    type="button"
+                    class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <img
+                      class="h-8 w-8 rounded-full"
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      alt=""
+                    />
+                  </button>
+                </div>
+
+                <div
+                  class="absolute right-0 z-20 mt-2 w-48 transform hidden transition ease-out duration-100 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  id="user-menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+                  <!--Profile Dropdown Menu-->
+                  <a
+                    href="profile.html"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                    >Your Profile</a
+                  >
+
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <!-- Mobile menu button -->
+            <button
+              type="button"
+              id="toggle-mobile-menu"
+              class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="hidden md:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a
+            href="login.html"
+            class="text-gray-100 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            aria-current="page"
+            >Login</a
+          >
+          <a
+            href="signup.html"
+            class="text-gray-100 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Signup</a
+          >
+          <a
+            href="create_post.html"
+            class="text-gray-100 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Create Post</a
+          >
+        </div>
+        <div class="border-t border-gray-700 pb-3 pt-4">
+          <div class="flex items-center px-5">
+            <div class="flex-shrink-0">
+              <img
+                class="h-10 w-10 rounded-full"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt=""
+              />
+            </div>
+            <div class="ml-3">
+              <div class="text-base font-medium leading-none text-white">
+                Tom Cook
+              </div>
+              <div class="text-sm font-medium leading-none text-gray-200">
+                tom@example.com
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 space-y-1 px-2">
+            <a
+              href="profile.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-100 hover:bg-gray-700 hover:text-white"
+              >Your Profile</a
+            >
+
+            <a
+              href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-100 hover:bg-gray-700 hover:text-white"
+              >Sign out</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <main class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Post Details -->
+      <section
+        class="bg-white p-3 rounded-sm col-span-1 md:col-span-2 md:h-[80vh] overflow-y-scroll scrollbar-hide"
+      >
+        <div class="w-full flex flex-col p-2">
+          <h2 class="text-2xl font-bold pb-6 text-emerald-600">
+            All About The Artemis Lunar Mission
+          </h2>
+          <!-- Author, date, comments -->
+          <div
+            class="w-full py-2 space-y-1 text-md font-semibold text-gray-600 grid grid-cols-13 md:grid-cols-3"
+          >
+            <!-- Author -->
+            <div class="flex">
+              <p class="mr-2">Post Author:</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <p>John Doe</p>
+            </div>
+            <!-- Time -->
+            <div class="flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+
+              <p>August 8, 2023</p>
+            </div>
+            <!-- Comments -->
+            <div class="flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 00-1.032-.211 50.89 50.89 0 00-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 002.433 3.984L7.28 21.53A.75.75 0 016 21v-4.03a48.527 48.527 0 01-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979z"
+                />
+                <path
+                  d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 001.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0015.75 7.5z"
+                />
+              </svg>
+
+              <p>112 Comments</p>
+            </div>
+          </div>
+          <!--Post -->
+          <hr class="border w-full my-2 border-gray-200" />
+          <div class="w-full">
+            <p class="text-left mt-5 text-gray-700">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit, eros arcu
+              elementum sem nostra magnis aptent habitasse, eget taciti posuere
+              nunc cum tempus. Auctor luctus elementum malesuada phasellus ac
+              vestibulum felis morbi class fermentum, eros cursus libero
+              inceptos consequat cubilia facilisi eget. Hac sem class sed magna
+              vivamus dictumst et odio, nunc convallis scelerisque lorem mus
+              gravida elementum, habitant turpis consequat consectetur luctus
+              tortor augue. Est turpis consectetur volutpat nascetur adipiscing
+              penatibus laoreet cursus posuere, odio aenean donec primis id elit
+              imperdiet. Nunc non primis metus sem pulvinar magna consequat,
+              ultricies lorem rutrum tortor ac lacinia condimentum senectus,
+              porttitor suspendisse aenean fames vivamus est. Eros libero
+              penatibus venenatis placerat praesent aliquet ultricies leo odio,
+              nulla consequat donec dictumst dolor fusce senectus magna aenean,
+              fames porttitor vivamus conubia ultrices facilisi iaculis
+              ridiculus. <br /><br />
+
+              Suscipit justo phasellus inceptos nascetur metus sociosqu conubia
+              erat, tempor sem ullamcorper condimentum malesuada fermentum
+              nullam donec auctor, congue elit nisl feugiat dolor netus morbi.
+              Velit elementum id sed nam eget cubilia consectetur facilisi, dis
+              nec facilisis purus dignissim conubia bibendum, rutrum vulputate
+              auctor sociis venenatis odio sit. Purus cubilia morbi eget sit
+              curabitur ullamcorper varius, consequat mi quis potenti mattis
+              turpis curae commodo, malesuada euismod est scelerisque posuere
+              ac. Senectus etiam interdum placerat elementum inceptos feugiat,
+              volutpat conubia torquent nisl eros. Commodo orci varius amet
+              cubilia pulvinar purus suspendisse id ornare a diam, mi iaculis
+              vestibulum libero litora parturient turpis cursus platea
+              sollicitudin placerat blandit, venenatis nisl ad tempor lobortis
+              nascetur vulputate primis sem volutpat. Non hac orci vestibulum
+              platea rutrum condimentum, malesuada sem ante commodo proin
+              blandit, curae sociosqu himenaeos suspendisse nostra. Sed dis eget
+              taciti felis curae ligula odio litora est tempor amet quis,
+              parturient faucibus viverra sem per urna eleifend maecenas justo
+              facilisis scelerisque. <br /><br />
+            </p>
+          </div>
+        </div>
+        <hr class="border w-full my-2 border-gray-200" />
+
+        <!-- Post Comments -->
+        <div class="max-w-xl py-8">
+          <h2 class="text-2xl text-emerald-600 font-bold mb-4">Comments</h2>
+
+          <!-- Sample Comment 1 -->
+          <div class="bg-white shadow-md rounded p-4 mb-4">
+            <div class="flex justify-between mb-2">
+              <div class="text-gray-600">John Doe</div>
+              <div class="text-gray-400 flex gap-2">
+                <!-- Edit Comment -->
+                <a
+                  href="#"
+                  class="text-emerald-600 rounded-xl hover:bg-emerald-100 p-2"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                    />
+                  </svg>
+                </a>
+                <!-- Delete Comment -->
+                <a
+                  href="delete.html"
+                  class="text-red-600 p-2 rounded-xl hover:bg-red-100"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="text-gray-500 text-sm mb-2">
+              Posted on August 5, 2023 at 10:30 AM
+            </div>
+            <p class="text-gray-800">
+              This is a sample comment. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit.
+            </p>
+          </div>
+
+          <!-- Sample Comment 2 -->
+          <div class="bg-white shadow-md rounded p-4 mb-4">
+            <div class="flex justify-between mb-2">
+              <div class="text-gray-600">Jane Smith</div>
+              <div class="text-gray-400 flex gap-2">
+                <!-- Edit Comment -->
+                <a
+                  href="#"
+                  class="text-emerald-600 rounded-xl hover:bg-emerald-100 p-2"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                    />
+                  </svg>
+                </a>
+                <!-- Delete Comment -->
+                <a
+                  href="delete.html"
+                  class="text-red-600 p-2 rounded-xl hover:bg-red-100"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="text-gray-500 text-sm mb-2">
+              Posted on August 4, 2023 at 3:45 PM
+            </div>
+            <p class="text-gray-800">Great article! Thanks for sharing.</p>
+          </div>
+
+          <!-- Sample Comment 3 -->
+          <div class="bg-white shadow-md rounded p-4 mb-4">
+            <div class="flex justify-between mb-2">
+              <div class="text-gray-600">Alex Johnson</div>
+              <div class="text-gray-400 flex gap-2">
+                <!-- Edit Comment -->
+                <a
+                  href="#"
+                  class="text-emerald-600 rounded-xl hover:bg-emerald-100 p-2"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                    />
+                  </svg>
+                </a>
+                <!-- Delete Comment -->
+                <a
+                  href="delete.html"
+                  class="text-red-600 p-2 rounded-xl hover:bg-red-100"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="text-gray-500 text-sm mb-2">
+              Posted on August 3, 2023 at 6:15 AM
+            </div>
+            <p class="text-gray-800">
+              I have a question regarding this topic. Can you please provide
+              more information?
+            </p>
+          </div>
+          <h1
+            class="hidden text-red-500 text-center font-medium text-xl italic"
+          >
+            This post has no comments
+          </h1>
+        </div>
+
+        <!-- End of Post Comments -->
+        <!-- Share Post by Mail -->
+        <h2 class="text-2xl capitalize font-bold pb-6 text-emerald-600">
+          Share this post by mail
+        </h2>
+
+        <a
+          href="share_post.html"
+          class="bg-emerald-500 text-white px-4 py-2 rounded-md hover:bg-emerald-600 focus:outline-none focus:ring focus:border-emerald-300"
+        >
+          Share Post
+        </a>
+      </section>
+      <!-- End of Post Details -->
+
+      <!-- Similiar Posts by Category -->
+      <section class="flex flex-col gap-2 md:h-[80vh]">
+        <!-- Posts -->
+        <h1
+          class="bg-emerald-500 w-full font-semibold text-xl text-center py-1 rounded-sm text-white"
+        >
+          Similiar Posts by Category
+        </h1>
+        <!-- Similar Blogs -->
+        <div
+          class="w-full h-[25vh] overflow-y-scroll scrollbar-hide rounded-sm shadow-md bg-white flex flex-col p-1"
+        >
+          <a
+            href=""
+            class="w-full font-semibold text-base text-emerald-600 px-3 py-1 rounded-sm hover:underline"
+            >All About The Artemis Lunar Mission</a
+          >
+          <a
+            href=""
+            class="w-full font-semibold text-base text-emerald-600 px-3 py-1 rounded-sm hover:underline"
+            >All About The Artemis Lunar Mission</a
+          >
+          <a
+            href=""
+            class="w-full font-semibold text-base text-emerald-600 px-3 py-1 rounded-sm hover:underline"
+            >All About The Artemis Lunar Mission</a
+          >
+          <a
+            href=""
+            class="w-full font-semibold text-base text-emerald-600 px-3 py-1 rounded-sm hover:underline"
+            >All About The Artemis Lunar Mission</a
+          >
+          <a
+            href=""
+            class="w-full font-semibold text-base text-emerald-600 px-3 py-1 rounded-sm hover:underline"
+            >All About The Artemis Lunar Mission</a
+          >
+          <a
+            href=""
+            class="w-full font-semibold text-base text-emerald-600 px-3 py-1 rounded-sm hover:underline"
+            >All About The Artemis Lunar Mission</a
+          >
+        </div>
+
+        <!-- Comment Form -->
+        <div class="flex flex-col mt-1 order-first lg:order-last">
+          <h1
+            class="bg-emerald-500 w-full font-semibold text-xl text-center py-1 mb-2 rounded-sm text-white"
+          >
+            Post a Comment
+          </h1>
+          <form method="post" class="space-y-4 bg-white p-4 rounded-xl">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="mt-1 p-2 border w-full rounded-md focus:outline-none focus:ring-emerald-400 focus:border-emerald-300"
+              />
+            </div>
+            <div>
+              <label
+                for="comment"
+                class="block text-sm font-medium text-gray-700"
+                >Comment</label
+              >
+              <textarea
+                id="comment"
+                name="comment"
+                rows="3"
+                required
+                class="mt-1 p-2 border w-full rounded-md focus:outline-none focus:ring-emerald-400 focus:border-emerald-300"
+              ></textarea>
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 focus:outline-none focus:ring-emerald-200"
+              >
+                Post Comment
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- End of Comment Form -->
+
+        <!-- End of Posts -->
+      </section>
+    </main>
+    <!-- JS Scripts -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

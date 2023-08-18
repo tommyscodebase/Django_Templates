@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Galaxy | Share Post</title>
+  </head>
+  <body class="p-4 bg-gray-200 flex items-center justify-center min-h-screen">
+    <main class="mt-5 p-3 w-full flex justify-center items-center">
+      <!-- Post Details -->
+      <section class="bg-white p-3 rounded-sm w-full md:w-4/5">
+        <!-- Success Message -->
+        <div class="bg-green-100 p-5 w-full rounded" id="alert-container">
+          <div class="flex justify-between">
+            <div class="flex space-x-3">
+              <div
+                class="w-fit h-fit cursor-pointer"
+                id="close-alert-container"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="flex-none fill-current text-green-500 h-4 w-4"
+                >
+                  <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 16.518l-4.5-4.319 1.396-1.435 3.078 2.937 6.105-6.218 1.421 1.409-7.5 7.626z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="flex-1 leading-tight text-sm text-green-700 font-medium"
+              >
+                Email has been sent successfully to person@mail.com
+                <a
+                  class="ml-9 bg-emerald-600 p-3 rounded-xl text-white hover:underline"
+                  href="post.html"
+                  >Back to Post</a
+                >
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="flex-none fill-current text-green-600 h-3 w-3"
+            >
+              <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End of Success Message -->
+
+        <!-- Share Post by Mail -->
+        <h2 class="text-2xl capitalize font-bold pb-6 text-emerald-600">
+          Share this post by mail
+        </h2>
+        <form>
+          <div class="mb-4">
+            <label
+              for="sender-name"
+              class="block text-sm font-medium text-gray-700"
+              >Sender's Name</label
+            >
+            <input
+              type="text"
+              id="sender-name"
+              required
+              name="sender-name"
+              class="mt-1 p-2 border w-full rounded-md focus:outline-none focus:ring-emerald-400 focus:border-emerald-300"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="sender-email"
+              class="block text-sm font-medium text-gray-700"
+              >Sender's Email Address</label
+            >
+            <input
+              type="email"
+              id="sender-email"
+              required
+              name="sender-email"
+              class="mt-1 p-2 border w-full rounded-md focus:outline-none focus:ring-emerald-400 focus:border-emerald-300"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="receiver-name"
+              class="block text-sm font-medium text-gray-700"
+              >Receiver's Name</label
+            >
+            <input
+              type="text"
+              id="receiver-name"
+              required
+              name="receiver-name"
+              class="mt-1 p-2 border w-full rounded-md focus:outline-none focus:ring-emerald-400 focus:border-emerald-300"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="receiver-email"
+              class="block text-sm font-medium text-gray-700"
+              >Receiver's Email Address</label
+            >
+            <input
+              type="email"
+              id="receiver-email"
+              required
+              name="receiver-email"
+              class="mt-1 p-2 border w-full rounded-md focus:outline-none focus:ring-emerald-400 focus:border-emerald-300"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="subject" class="block text-sm font-medium text-gray-700"
+              >Subject or A Brief Message</label
+            >
+            <textarea
+              rows="5"
+              id="subject"
+              name="subject"
+              class="mt-1 p-2 border w-full rounded-md focus:outline-none focus:ring-emerald-400 focus:border-emerald-300"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-emerald-500 text-white px-4 py-2 rounded-md hover:bg-emerald-600 focus:outline-none focus:ring focus:border-emerald-300"
+          >
+            Share Post
+          </button>
+          <a
+            href="post.html"
+            class="bg-white text-emerald-600 px-4 py-2 rounded-md hover:bg-gray-50 hover:border hover:border-emerald-600"
+          >
+            Go Back
+          </a>
+        </form>
+      </section>
+      <!-- End of Post Details -->
+    </main>
+    <!-- JS Scripts -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
