@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/chat-bot.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Django Chatbot</title>
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#2731DC] to-[#03C1FC] py-5 flex flex-col items-center justify-center min-h-screen"
+  >
+    <p class="text-white font-black text-xl mb-5 underline underline-offset-8">
+      Your intelligent AI companion
+    </p>
+    <div
+      class="flex flex-col bg-white max-h-[85vh] shadow-sm w-4/5 p-3 rounded-xl"
+    >
+      <!-- header -->
+      <div
+        class="flex flex-auto w-full items-center justify-between rounded-2xl p-3 bg-gradient-to-r from-[#2731DC] to-[#03C1FC]"
+      >
+        <!-- User -->
+        <div class="flex gap-2 items-center">
+          <img
+            class="w-16 h-16 rounded-full"
+            src="./images/chat-bot.jpg"
+            alt="User profile pic"
+            srcset=""
+          />
+          <div class="text-yellow-200 font-medium">
+            Hi,<br />
+            <span class="text-white font-bold text-xl">Tommy</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <a
+            class="flex flex-col justify-center items-center"
+            href="chats.html"
+          >
+            <p class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6 text-white"
+              >
+                <path
+                  d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 00-1.032-.211 50.89 50.89 0 00-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 002.433 3.984L7.28 21.53A.75.75 0 016 21v-4.03a48.527 48.527 0 01-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979z"
+                />
+                <path
+                  d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 001.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0015.75 7.5z"
+                />
+              </svg>
+            </p>
+            <span class="text-white font-bold">Recent Chats</span>
+          </a>
+          <a
+            class="bg-white text-center text-[#2731DC] font-bold rounded-md p-1"
+            href=""
+            >Save Chat</a
+          >
+        </div>
+      </div>
+      <hr class="border-t border-gray-100 my-4" />
+      <!-- Chat Container -->
+      <div
+        id="chat-container"
+        class="bg-white flex flex-1 max-h-[80vh] min-h-[50vh] flex-col overflow-y-scroll scrollbar-hide"
+      >
+        <!-- AI Message -->
+        <div class="flex gap-1 justify-start mt-3">
+          <img
+            src="./images/chat-bot.jpg"
+            class="w-6 h-6 rounded-full ml-2 mb-1"
+            alt=""
+          />
+          <p
+            class="bg-gray-100 py-2 h-fit px-3 text-lg text-gray-600 shadow-md rounded-bl-3xl rounded-r-3xl w-fit max-w-[90%] md:max-w-[60%]"
+          >
+            Hello, how may I help you?😎
+          </p>
+        </div>
+        <!-- User Message -->
+        <div class="flex gap-1 justify-end mt-3">
+          <p
+            class="bg-gradient-to-tr from-[#2731DC] to-[#03C1FC] py-2 h-fit px-3 text-lg text-right text-white shadow-md rounded-br-3xl rounded-l-3xl w-fit max-w-[90%] md:max-w-[60%]"
+          >
+            I have a few questions for you.
+          </p>
+          <img
+            src="./images/user.jpg"
+            class="w-6 h-6 rounded-full ml-2 mb-1"
+            alt=""
+          />
+        </div>
+      </div>
+      <form
+        class="flex gap-2 border-t-2 border-[#03c2fc4d]"
+        method="post"
+        action=""
+        id="chat-form"
+      >
+        <textarea
+          class="p-3 outline outline-2 outline-gray-300 border-gray-200 rounded-md w-full text-gray-700 font-medium text-lg focus:outline-2 focus:outline-sky-200"
+          type="text"
+          required
+          rows="1"
+          id="message"
+          placeholder="Ask me anything..."
+        ></textarea>
+        <button
+          class="bg-gradient-to-br from-[#2731DC] to-[#03C1FC] p-3 max-w-14 max-h-14 rounded-xl text-white"
+          type="submit"
+          id="send"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

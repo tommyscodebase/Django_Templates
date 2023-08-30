@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/chat-bot.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Django Chatbot</title>
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#2731DC] to-[#03C1FC] py-5 flex flex-col items-center justify-center min-h-screen"
+  >
+    <p class="text-white font-black text-xl mb-5 underline underline-offset-8">
+      Your Recent Chats
+    </p>
+    <div
+      class="flex flex-col bg-white max-h-[85vh] shadow-sm w-4/5 p-3 rounded-xl"
+    >
+      <!-- header -->
+      <div
+        class="flex flex-auto w-full items-center justify-between rounded-2xl p-3 bg-gradient-to-r from-[#2731DC] to-[#03C1FC]"
+      >
+        <!-- User -->
+        <div class="flex gap-2 items-center">
+          <img
+            class="w-16 h-16 rounded-full"
+            src="./images/chat-bot.jpg"
+            alt="User profile pic"
+            srcset=""
+          />
+          <div class="text-yellow-200 font-medium">
+            Hi,<br />
+            <span class="text-white font-bold text-xl">Tommy</span>
+          </div>
+        </div>
+        <a class="flex flex-col justify-center items-center" href="index.html">
+          <p class="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-12 h-12 text-white"
+            >
+              <path
+                d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+              />
+              <path
+                d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+              />
+            </svg>
+          </p>
+          <span class="text-white font-bold">Home</span>
+        </a>
+      </div>
+      <hr class="border-t border-gray-100 my-4" />
+      <!-- Chat Container -->
+      <div
+        class="bg-white flex flex-1 max-h-[80vh] min-h-[50vh] flex-col overflow-y-scroll scrollbar-hide"
+      >
+        <div class="flex flex-col gap-2 items-center justify-start">
+          <!-- Session Stripe -->
+          <div class="flex gap-2 items-center justify-center w-full">
+            <a
+              class="bg-[#2731DC] flex-1 p-2 rounded-md text-white font-semibold text-lg"
+              href=""
+              >Develop a chatbot with Django</a
+            >
+            <a class="bg-red-500 text-white p-2 rounded-md" href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="flex gap-2 items-center justify-center w-full">
+            <a
+              class="bg-[#2731DC] flex-1 p-2 rounded-md text-white font-semibold text-lg"
+              href=""
+              >Develop a chatbot with Django</a
+            >
+            <a class="bg-red-500 text-white p-2 rounded-md" href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="flex gap-2 items-center justify-center w-full">
+            <a
+              class="bg-[#2731DC] flex-1 p-2 rounded-md text-white font-semibold text-lg"
+              href=""
+              >Develop a chatbot with Django</a
+            >
+            <a class="bg-red-500 text-white p-2 rounded-md" href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="flex gap-2 items-center justify-center w-full">
+            <a
+              class="bg-[#2731DC] flex-1 p-2 rounded-md text-white font-semibold text-lg"
+              href=""
+              >Develop a chatbot with Django</a
+            >
+            <a class="bg-red-500 text-white p-2 rounded-md" href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="flex gap-2 items-center justify-center w-full">
+            <a
+              class="bg-[#2731DC] flex-1 p-2 rounded-md text-white font-semibold text-lg"
+              href=""
+              >Develop a chatbot with Django</a
+            >
+            <a class="bg-red-500 text-white p-2 rounded-md" href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="flex gap-2 items-center justify-center w-full">
+            <a
+              class="bg-[#2731DC] flex-1 p-2 rounded-md text-white font-semibold text-lg"
+              href=""
+              >Develop a chatbot with Django</a
+            >
+            <a class="bg-red-500 text-white p-2 rounded-md" href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

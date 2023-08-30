@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/chat-bot.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chatbot Login</title>
+  </head>
+  <body
+    class="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#2731DC] to-[#03C1FC]"
+  >
+    <form
+      action=""
+      class="flex flex-col gap-2 shadow-xl w-4/5 md:w-2/5 rounded-xl bg-gray-100 p-4"
+      method="post"
+    >
+      <!-- header -->
+      <div
+        class="bg-gradient-to-r from-[#2731DC] to-[#03C1FC] text-white p-3 rounded-t-xl rounded-b-md font-medium text-xl text-center"
+      >
+        Login to start chatting!!!
+      </div>
+
+      <div class="flex flex-col gap-1 mt-3">
+        <label class="text-gray-600 text-sm" for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          required
+          name="username"
+          class="p-2 rounded-lg outline outline-2 outline-gray-300 text-gray-700 font-medium text-lg focus:outline-2 focus:outline-sky-200"
+        />
+      </div>
+      <div class="flex flex-col gap-1">
+        <label class="text-gray-600 text-sm" for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          required
+          name="password"
+          class="p-2 rounded-lg outline outline-2 outline-gray-300 text-gray-700 font-medium text-lg focus:outline-2 focus:outline-sky-200"
+        />
+      </div>
+      <button
+        type="submit"
+        class="mt-4 flex w-full justify-center rounded-md bg-[#2731DC] px-3 py-1.5 text-lg font-semibold text-white shadow-sm hover:bg-[#1967E9] ease-in-out duration-300"
+      >
+        Login
+      </button>
+    </form>
+  </body>
+</html>
