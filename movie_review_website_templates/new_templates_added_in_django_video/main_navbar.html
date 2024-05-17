@@ -1,0 +1,236 @@
+{% load static %}
+
+<header class="text-pred">
+  <!-- Mobile Navbar -->
+  <nav class="flex flex-col w-full bg-pLightPurple shadow-sm p-3 lg:hidden">
+    <!-- Top -->
+    <div class="flex flex-row justify-between items-center" id="top">
+      <a href="{% url 'home' %}" class="font-bold text-2xl whitespace-nowrap">
+        M Review</a
+      >
+
+      <!-- Open and Close Mobile Nav -->
+      <div class="cursor-pointer p-2" id="toggle-mobile-nav">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </div>
+    </div>
+    <!-- Links -->
+    <div class="mt-5 hidden ease-in-out duration-1000" id="links">
+      <!-- Search Form -->
+      <form
+        action=""
+        method="get"
+        class="w-full flex justify-between bg-pgray/40 py-2 px-4 rounded-lg gap-2"
+      >
+        <input
+          type="text"
+          name="q"
+          id="Search"
+          placeholder="Search movies..."
+          class="w-full bg-pgray rounded-md p-2 focus:outline-none text-lg"
+        />
+        <button type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            />
+          </svg>
+        </button>
+      </form>
+      <!-- Links -->
+      <ul class="mt-3">
+        <li>
+          <a
+            href="?sort=latest"
+            class="block text-center text-xl rounded-md p-2 duration-500 ease-in-out hover:bg-pgray hover:font-semibold"
+            >Latest Movies</a
+          >
+        </li>
+        <li>
+          <a
+            href="?sort=popular"
+            class="block text-center text-xl rounded-md p-2 duration-500 ease-in-out hover:bg-pgray"
+            >Most Popular</a
+          >
+        </li>
+      </ul>
+      {% if request.user.is_authenticated %}
+      <!-- Add Movie Button -->
+      <div class="flex w-4/5 sm:w-2/5 mx-auto mt-2">
+        <a
+          href="{% url 'add_movie' %}"
+          class="bg-pgreen flex justify-center text-white font-medium gap-3 p-2 rounded-md w-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 4.5v15m7.5-7.5h-15"
+            />
+          </svg>
+          Add Movie
+        </a>
+      </div>
+      <hr class="border-1 border-white/10 my-4" />
+      <!-- Profile -->
+      <div class="w-full flex justify-between items-center">
+        <a href="{% url 'profile' %}" class="flex flex-row items-center gap-5">
+          <img
+            src="{{ profile.avatar.url }}"
+            alt="profile picture"
+            class="w-12 h-12 rounded-full"
+          />
+          <div class="">
+            <p class="font-bold">Codebase</p>
+            <p class="opacity-70">codebase@mail.com</p>
+          </div>
+        </a>
+        <!-- Logout -->
+        <a href="{% url 'logout' %}">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </nav>
+  <!-- Desktop Navbar -->
+  <nav
+    class="hidden lg:flex justify-between flex-col w-full bg-pLightPurple shadow-sm py-3 px-10"
+  >
+    <div class="flex flex-row justify-between items-center gap-5">
+      <a href="/" class="font-bold text-2xl whitespace-nowrap">M Review</a>
+      <!-- Search Form -->
+      <form
+        action=""
+        method="get"
+        class="w-full lg:w-[45%] flex justify-between bg-pgray/40 py-2 px-4 rounded-lg gap-2"
+      >
+        <input
+          type="text"
+          name="q"
+          id="Search"
+          placeholder="Search movies..."
+          class="w-full bg-pgray rounded-md p-2 focus:outline-none text-lg"
+        />
+        <button type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            />
+          </svg>
+        </button>
+      </form>
+      {% if request.user.is_authenticated %}
+      <!-- Add Movie Button -->
+      <a
+        class="bg-pgreen text-white font-medium flex gap-3 py-2 px-5 rounded-md transition-all ease-linear duration-300 hover:scale-[98%]"
+        id="add-movie"
+        href="{% url 'add_movie' %}"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        Add Movie
+      </a>
+      <!-- Open and Close Profile popup -->
+      <div class="relative">
+        <img
+          src="{{ profile.avatar.url }}"
+          class="w-12 h-12 rounded-full cursor-pointer"
+          alt="profile picture"
+          onclick="toggleProfilePopUp()"
+        />
+        <div
+          class="hidden absolute z-50 w-72 bg-pLightPurple shadow-2xl outline outline-white/20 space-y-4 p-3 rounded-lg mt-2 right-1"
+          id="profile-popup"
+        >
+          <a
+            href="{% url 'profile' %}"
+            class="flex flex-col p-2 rounded-lg hover:bg-pgray/50"
+          >
+            <p class="font-bold text-pgreen text-lg">
+              {{ request.user.username }}
+            </p>
+            <p class="text-pgreen/50">{{ request.user.email }}</p>
+          </a>
+          <hr />
+          <a
+            href="{% url 'logout' %}"
+            class="flex justify-between font-bold text-red-400 p-2 rounded-lg hover:bg-pgray"
+            >Logout
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+                clip-rule="evenodd"
+              /></svg
+          ></a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </nav>
+</header>

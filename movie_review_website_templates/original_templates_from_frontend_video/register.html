@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Review - Register</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="min-h-screen bg-pgray flex items-center justify-center">
+    <main class="w-full lg:w-3/5 p-5">
+      <form
+        action=""
+        class="bg-pLightPurple text-gray-300 flex flex-col gap-4 w-full rounded-xl shadow-xl p-5"
+      >
+        <p class="text-center font-semibold text-2xl text-pgreen">
+          Create an account for free
+        </p>
+        <!-- First name -->
+        <div class="flex flex-col gap-2">
+          <label for="firstname">First Name</label>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            class="text-white bg-pgray/50 focus:outline-none focus:border focus:border-pgreen font-normal w-full rounded border border-white/30 pl-3 h-10"
+          />
+        </div>
+        <!-- Last name -->
+        <div class="flex flex-col gap-2">
+          <label for="lastname">Last Name</label>
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            class="text-white bg-pgray/50 focus:outline-none focus:border focus:border-pgreen font-normal w-full rounded border border-white/30 pl-3 h-10"
+          />
+        </div>
+        <!-- Username -->
+        <div class="flex flex-col gap-2">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="text-white bg-pgray/50 focus:outline-none focus:border focus:border-pgreen font-normal w-full rounded border border-white/30 pl-3 h-10"
+          />
+        </div>
+        <!-- Email -->
+        <div class="flex flex-col gap-2">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="text-white bg-pgray/50 focus:outline-none focus:border focus:border-pgreen font-normal w-full rounded border border-white/30 pl-3 h-10"
+          />
+        </div>
+        <!-- Password -->
+        <div class="flex flex-col gap-2">
+          <label for="password">Passwword</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="text-white bg-pgray/50 focus:outline-none focus:border focus:border-pgreen font-normal w-full rounded border border-white/30 pl-3 h-10"
+          />
+        </div>
+        <!-- Password Repeat -->
+        <div class="flex flex-col gap-2">
+          <label for="password2">Passwword</label>
+          <input
+            type="password"
+            name="password2"
+            id="password2"
+            class="text-white bg-pgray/50 focus:outline-none focus:border focus:border-pgreen font-normal w-full rounded border border-white/30 pl-3 h-10"
+          />
+        </div>
+        <!-- Avatar -->
+        <div class="flex flex-col gap-2">
+          <label for="avatar">Profile Picture</label>
+          <input
+            type="file"
+            name="avatar"
+            id="avatar"
+            class="text-white bg-pgray/50"
+          />
+        </div>
+        <!-- Submit and Reset -->
+        <div class="flex gap-2">
+          <button
+            type="submit"
+            class="py-1 px-6 text-white bg-gradient-to-br from-orangeOne to-orangeTwo rounded-xl"
+          >
+            Submit
+          </button>
+          <button
+            type="reset"
+            class="py-1 px-6 bg-pgreen text-white rounded-xl"
+          >
+            Reset
+          </button>
+        </div>
+        <p>
+          Already have an account? &nbsp;
+          <a href="Login.html" class="font-bold underline">Login</a>
+        </p>
+      </form>
+    </main>
+  </body>
+</html>

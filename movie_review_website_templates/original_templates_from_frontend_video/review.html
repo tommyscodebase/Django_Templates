@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Review</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-pgray min-h-screen">
+    <header class="text-pred">
+      <!-- Mobile Navbar -->
+      <nav class="flex flex-col w-full bg-pLightPurple shadow-sm p-3 lg:hidden">
+        <!-- Top -->
+        <div class="flex flex-row justify-between items-center" id="top">
+          <a href="/" class="font-bold text-2xl whitespace-nowrap"> M Review</a>
+
+          <!-- Open and Close Mobile Nav -->
+          <div class="cursor-pointer p-2" id="toggle-mobile-nav">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- Links -->
+        <div class="mt-5 hidden ease-in-out duration-1000" id="links">
+          <!-- Search Form -->
+          <form
+            action=""
+            method="get"
+            class="w-full flex justify-between bg-pgray/40 py-2 px-4 rounded-lg gap-2"
+          >
+            <input
+              type="text"
+              name="q"
+              id="Search"
+              placeholder="Search movies..."
+              class="w-full bg-pgray rounded-md p-2 focus:outline-none text-lg"
+            />
+            <button type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </button>
+          </form>
+          <!-- Links -->
+          <ul class="mt-3">
+            <li>
+              <a
+                href="/"
+                class="block text-center text-xl rounded-md p-2 duration-500 ease-in-out hover:bg-pgray hover:font-semibold"
+                >Latest Movies</a
+              >
+            </li>
+            <li>
+              <a
+                href="/"
+                class="block text-center text-xl rounded-md p-2 duration-500 ease-in-out hover:bg-pgray"
+                >Most Popular</a
+              >
+            </li>
+          </ul>
+          <!-- Add Movie Button -->
+          <div class="flex w-4/5 sm:w-2/5 mx-auto mt-2">
+            <a
+              href="add-movie.html"
+              class="bg-pgreen flex justify-center text-white font-medium gap-3 p-2 rounded-md w-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+              Add Movie
+            </a>
+          </div>
+          <hr class="border-1 border-white/10 my-4" />
+          <!-- Profile -->
+          <div class="w-full flex justify-between items-center">
+            <a href="profile.html" class="flex flex-row items-center gap-5">
+              <img
+                src="images/user.jpg"
+                alt="profile picture"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="">
+                <p class="font-bold">Codebase</p>
+                <p class="opacity-70">codebase@mail.com</p>
+              </div>
+            </a>
+            <!-- Logout -->
+            <a href="login.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Desktop Navbar -->
+      <nav
+        class="hidden lg:flex justify-between flex-col w-full bg-pLightPurple shadow-sm py-3 px-10"
+      >
+        <div class="flex flex-row justify-between items-center gap-5">
+          <a href="/" class="font-bold text-2xl whitespace-nowrap">M Review</a>
+          <!-- Search Form -->
+          <form
+            action=""
+            method="get"
+            class="w-full lg:w-[45%] flex justify-between bg-pgray/40 py-2 px-4 rounded-lg gap-2"
+          >
+            <input
+              type="text"
+              name="q"
+              id="Search"
+              placeholder="Search movies..."
+              class="w-full bg-pgray rounded-md p-2 focus:outline-none text-lg"
+            />
+            <button type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </button>
+          </form>
+          <!-- Add Movie Button -->
+          <a
+            class="bg-pgreen text-white font-medium flex gap-3 py-2 px-5 rounded-md transition-all ease-linear duration-300 hover:scale-[98%]"
+            id="add-movie"
+            href="add-movie.html"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Add Movie
+          </a>
+          <!-- Open and Close Profile popup -->
+          <div class="relative">
+            <img
+              src="images/user.jpg"
+              class="w-12 h-12 rounded-full cursor-pointer"
+              alt="profile picture"
+              onclick="toggleProfilePopUp()"
+            />
+            <div
+              class="hidden absolute z-50 w-72 bg-pLightPurple shadow-2xl outline outline-white/20 space-y-4 p-3 rounded-lg mt-2 right-1"
+              id="profile-popup"
+            >
+              <a
+                href="profile.html"
+                class="flex flex-col p-2 rounded-lg hover:bg-pgray/50"
+              >
+                <p class="font-bold text-pgreen text-lg">Codebase</p>
+                <p class="text-pgreen/50">codebase@mail.com</p>
+              </a>
+              <hr />
+              <a
+                href="login.html"
+                class="flex justify-between font-bold text-red-400 p-2 rounded-lg hover:bg-pgray"
+                >Logout
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+                    clip-rule="evenodd"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="p-5 text-white">
+      <!-- Top -->
+      <div class="flex flex-col lg:flex-row gap-5">
+        <!-- Image -->
+        <div
+          class="w-full sm:w-4/5 lg:w-2/5 bg-cover bg-no-repeat bg-center rounded-lg h-[40vh] lg:h-auto"
+          style="background-image: url(images/bg_image_1.jpg)"
+        ></div>
+        <!-- Details -->
+        <div class="w-ful flex flex-col gap-3 sm:w-4/5 lg:w-2/5">
+          <p class="text-pred font-bold text-2xl">Dead Reckoning - Part 1</p>
+          <p class="font-semibold text-pgreen text-base">
+            Producer: <span class="text-white font-medium">Tommy Codebase</span>
+          </p>
+          <p class="font-semibold text-pgreen text-base">
+            Year: <span class="text-white font-medium">2023</span>
+          </p>
+          <p class="font-semibold text-pgreen text-base">
+            Category: <span class="text-white font-medium">Action</span>
+          </p>
+          <p class="font-semibold text-pgreen text-base">
+            Rating: <span class="text-white font-medium">9.1</span>
+          </p>
+          <p class="text-base text-justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            iste blanditiis voluptates, veniam quisquam numquam ut possimus vero
+            deleniti dolorem velit dignissimos ipsum dolores ipsam quam
+            doloremque consequuntur quia? Saepe.
+          </p>
+        </div>
+      </div>
+      <!-- Bottom -->
+      <div class="flex flex-col gap-3 mt-10 sm:flex-row">
+        <div class="w-full sm:w-2/5 lg:w-[25%]">
+          <form
+            action=""
+            class="p-5 bg-pLightPurple shadow-md rounded-2xl flex flex-col gap-3"
+          >
+            <p class="text-pgreen text-center font-semibold text-xl">
+              Add a review
+            </p>
+            <!-- username -->
+            <div class="flex flex-col">
+              <label for="username" class="font-medium text-white/80"
+                >Username</label
+              >
+              <input
+                type="text"
+                name="username"
+                id="username"
+                class="bg-pgray p-2 rounded-xl text-xl border-2 border-white/10 focus-within:outline-none"
+              />
+            </div>
+            <!-- Rating -->
+            <div class="flex gap-4 flex-col">
+              <label for="rating" class="font-medium text-white/80"
+                >Rating</label
+              >
+              <input
+                type="range"
+                min="1"
+                max="10"
+                value="5"
+                step="0.1"
+                id="rating"
+                name="rating"
+                class="slider h-1 bg-pgreen/40 w-full rounded-lg appearance-none cursor-pointer"
+              />
+              <span id="rate">5.0</span>
+              <!-- Comment -->
+              <div class="flex flex-col">
+                <label for="comment" class="font-medium text-white/80"
+                  >Comment</label
+                >
+                <textarea
+                  name="comment"
+                  id="comment"
+                  rows="5"
+                  class="bg-pgray/40 p-2 rounded-xl text-xl border-2 border-white/10 focus:outline-none"
+                ></textarea>
+              </div>
+              <!-- Submit -->
+              <div class="">
+                <input
+                  type="submit"
+                  class="py-2 px-5 bg-pgreen text-white font-semibold text-center rounded-xl w-full cursor-pointer"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Right: Reviews and Similar Movies -->
+        <div
+          class="w-full flex justify-between flex-col gap-3 lg:flex-row sm:w-3/5 lg:flex-1"
+        >
+          <!-- Reviews -->
+          <div class="w-full flex flex-col gap-3 lg:flex-1">
+            <p class="text-xl font-semibold text-pgreen text-center">Reviews</p>
+            <!-- Review -->
+            <div
+              class="w-full flex flex-col gap-1 justify-between p-5 bg-pLightPurple rounded-xl shadow-md sm:flex-row"
+            >
+              <!-- Left: Avatar -->
+              <div class="">
+                <img
+                  src="images/user.jpg"
+                  alt="profile picture"
+                  class="w-14 h-14 rounded-full"
+                />
+              </div>
+              <!-- Right: Name, Time, Comment -->
+              <div class="flex w-full sm:w-[85%] flex-col">
+                <p class="font-semibold text-pgreen">Codebase</p>
+                <p class="text-gray-300">April 14, 1912</p>
+                <p class="mt-2 text-justify">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  distinctio exercitationem ipsam?
+                </p>
+                <!-- Rate and Buttons -->
+                <div class="w-full flex mt-2 justify-between">
+                  <!-- Rate -->
+                  <div class="flex font-bold text-gray-300">
+                    Rate
+                    <span class="ml-2 flex text-pred"
+                      >6.7<svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#ff803d"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="flex gap-3">
+                    <!-- Edit -->
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#51c419"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z"
+                        />
+                        <path
+                          d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z"
+                        />
+                      </svg>
+                    </a>
+                    <!-- Delete -->
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#fd384f"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Review -->
+            <div
+              class="w-full flex flex-col gap-1 justify-between p-5 bg-pLightPurple rounded-xl shadow-md sm:flex-row"
+            >
+              <!-- Left: Avatar -->
+              <div class="">
+                <img
+                  src="images/user.jpg"
+                  alt="profile picture"
+                  class="w-14 h-14 rounded-full"
+                />
+              </div>
+              <!-- Right: Name, Time, Comment -->
+              <div class="flex w-full sm:w-[85%] flex-col">
+                <p class="font-semibold text-pgreen">Codebase</p>
+                <p class="text-gray-300">April 14, 1912</p>
+                <p class="mt-2 text-justify">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  distinctio exercitationem ipsam?
+                </p>
+                <!-- Rate and Buttons -->
+                <div class="w-full flex mt-2 justify-between">
+                  <!-- Rate -->
+                  <div class="flex font-bold text-gray-300">
+                    Rate
+                    <span class="ml-2 flex text-pred"
+                      >6.7<svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#ff803d"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="flex gap-3">
+                    <!-- Edit -->
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#51c419"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z"
+                        />
+                        <path
+                          d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z"
+                        />
+                      </svg>
+                    </a>
+                    <!-- Delete -->
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#fd384f"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Review -->
+            <div
+              class="w-full flex flex-col gap-1 justify-between p-5 bg-pLightPurple rounded-xl shadow-md sm:flex-row"
+            >
+              <!-- Left: Avatar -->
+              <div class="">
+                <img
+                  src="images/user.jpg"
+                  alt="profile picture"
+                  class="w-14 h-14 rounded-full"
+                />
+              </div>
+              <!-- Right: Name, Time, Comment -->
+              <div class="flex w-full sm:w-[85%] flex-col">
+                <p class="font-semibold text-pgreen">Codebase</p>
+                <p class="text-gray-300">April 14, 1912</p>
+                <p class="mt-2 text-justify">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  distinctio exercitationem ipsam?
+                </p>
+                <!-- Rate and Buttons -->
+                <div class="w-full flex mt-2 justify-between">
+                  <!-- Rate -->
+                  <div class="flex font-bold text-gray-300">
+                    Rate
+                    <span class="ml-2 flex text-pred"
+                      >6.7<svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#ff803d"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="flex gap-3">
+                    <!-- Edit -->
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#51c419"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z"
+                        />
+                        <path
+                          d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z"
+                        />
+                      </svg>
+                    </a>
+                    <!-- Delete -->
+                    <a href=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#fd384f"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Similar Movies -->
+          <div class="w-full flex flex-col gap-3 lg:w-1/3">
+            <p class="text-xl font-semibold text-pgreen text-center">
+              Similar Movies
+            </p>
+            <!-- Movie Card -->
+            <div
+              class="flex relative flex-col gap-2 rounded-md bg-pLightPurple w-full p-2 h-[260px] group transition-all ease-in-out duration-500 hover:scale-[102%] hover:shadow-md"
+            >
+              <!-- Rating -->
+              <div
+                class="absolute bg-pgreen z-10 top-3 left-3 p-1 text-xs font-semibold text-white rounded-full transition-all ease-in-out duration-500 group-hover:opacity-100 lg:opacity-50 w-fit"
+              >
+                <p class="flex gap-1 items-center">
+                  5.9
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </p>
+              </div>
+              <!-- Image -->
+              <div
+                class="h-3/5 w-full bg-center bg-no-repeat bg-cover rounded-lg lg:grayscale group-hover:grayscale-0 transition-all ease-in duration-500"
+                style="background-image: url(./images/bg_image_1.jpg)"
+              ></div>
+              <p class="font-medium text-sm text-white">
+                Dead Reckoning - Part 1
+              </p>
+              <p class="text-xs font-bold text-pgreen">2023</p>
+              <a
+                href="review.html"
+                class="bg-gradient-to-br from-orangeOne to-orangeTwo text-center text-white w-full p-1 font-medium rounded-full"
+              >
+                Review
+              </a>
+            </div>
+            <!-- Movie Card -->
+            <div
+              class="flex relative flex-col gap-2 rounded-md bg-pLightPurple w-full p-2 h-[260px] group transition-all ease-in-out duration-500 hover:scale-[102%] hover:shadow-md"
+            >
+              <!-- Rating -->
+              <div
+                class="absolute bg-pgreen z-10 top-3 left-3 p-1 text-xs font-semibold text-white rounded-full transition-all ease-in-out duration-500 group-hover:opacity-100 lg:opacity-50 w-fit"
+              >
+                <p class="flex gap-1 items-center">
+                  5.9
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </p>
+              </div>
+              <!-- Image -->
+              <div
+                class="h-3/5 w-full bg-center bg-no-repeat bg-cover rounded-lg lg:grayscale group-hover:grayscale-0 transition-all ease-in duration-500"
+                style="background-image: url(./images/bg_image_1.jpg)"
+              ></div>
+              <p class="font-medium text-sm text-white">
+                Dead Reckoning - Part 1
+              </p>
+              <p class="text-xs font-bold text-pgreen">2023</p>
+              <a
+                href="review.html"
+                class="bg-gradient-to-br from-orangeOne to-orangeTwo text-center text-white w-full p-1 font-medium rounded-full"
+              >
+                Review
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+      var slider = document.getElementById("rating");
+      var sliderValue = document.getElementById("rate");
+
+      slider.oninput = () => {
+        sliderValue.innerHTML = slider.value;
+      };
+    </script>
+  </body>
+</html>

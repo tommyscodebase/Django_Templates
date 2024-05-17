@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Review</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="min-h-screen bg-pgray flex items-center justify-center p-5">
+    <main class="w-full flex md:w-1/2 lg:w-2/3 h-[80vh] shadow-md rounded-sm">
+      <!-- Left -->
+      <div
+        id="left"
+        class="lg:flex bg-cover bg-center h-full flex-1 rounded-sm"
+        style="background-image: url(images/bg_image_1.jpg)"
+      ></div>
+      <!-- Right -->
+      <div
+        id="right"
+        class="w-full bg-white h-full rounded-sm lg:flex-1 lg:p-5 p-5 lg:rounded-r-sm"
+      >
+        <form action="" class="flex flex-col p-5 gap-6 text-pred">
+          <a href="index.html" class="font-bold text-xl"
+            >You are just a click away!</a
+          >
+          <!-- Username -->
+          <div class="flex flex-col gap-2">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="text-gray-600 focus:outline-none border focus:border-pgreen font-normal w-full h-10 rounded pl-3"
+            />
+          </div>
+          <!-- Password -->
+          <div class="flex flex-col gap-2">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="text-gray-600 focus:outline-none border focus:border-pgreen font-normal w-full h-10 rounded pl-3"
+            />
+          </div>
+          <!-- Button -->
+          <div class="w-full flex flex-col gap-3 justify-center items-center">
+            <button
+              type="submit"
+              class="font-semibold block w-3/5 p-2 bg-gradient-to-tr from-orangeOne to-orangeTwo text-white rounded-2xl"
+            >
+              Login
+            </button>
+            <p>
+              Don't have an account? &nbsp;
+              <a href="register.html" class="font-bold underline">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

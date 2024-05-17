@@ -1,0 +1,15 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body class="bg-pgray min-h-screen {% block others %} {% endblock others %}">
+    {% block content %} {% endblock content %}
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>

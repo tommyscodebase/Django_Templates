@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+<!--  -->
+
+{% block title %}Update Movie - "{{ movie.title }}"{% endblock title %}
+<!--  -->
+{% block content %}
+<!--  -->
+{% include 'main_navbar.html' %}
+<main class="p-5">
+  <form
+    method="post"
+    class="p-5 mx-auto w-full md:w-2/3 lg:w-3/5 bg-white shadow-md rounded-2xl flex flex-col gap-3"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <div class="flex justify-between">
+      <p class="font-semibold text-pgreen text-2xl">Update Movie</p>
+      <a
+        class="bg-pgreen p-2 rounded text-white w-fit"
+        href="{{ request.META.HTTP_REFERER }}"
+        >Go Back</a
+      >
+    </div>
+
+    {% for field in form %}
+    <label
+      for="username"
+      class="text-gray-800 text-sm font-bold leading-tight tracking-normal"
+      >{{ field.label }}</label
+    >
+    {{ field }} {% endfor %}
+    <!-- Submit -->
+    <div class="">
+      <input
+        type="submit"
+        value="Update"
+        class="py-2 px-5 bg-pgreen text-white font-semibold text-center rounded-xl w-full cursor-pointer"
+      />
+    </div>
+  </form>
+</main>
+{% endblock content %}
